@@ -3,6 +3,9 @@ export const state = () => ({
 });
 
 export const mutations = {
+  nuxtServerInit ({redirect}) {
+    redirect("/login?message=login");
+  },
   setToken(state, token) {
     state.token = token;
   },

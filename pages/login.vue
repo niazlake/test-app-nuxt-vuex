@@ -1,13 +1,13 @@
 <template>
   <section>
+    <div v-if="$route.query.message" class="alert alert-danger mb-3">
+      Need login first
+    </div>
     <form @submit.prevent="onSubmit()">
       <h1>Login Page</h1>
       <div class="form-group">
         <input type="text" class="form-control" />
       </div>
-      <p>
-        <nuxt-link to="/">To home page</nuxt-link>
-      </p>
       <button class="btn btn-primary" type="submit">
         Login
       </button>
@@ -20,6 +20,7 @@ export default {
   layout: "empty",
   methods: {
     onSubmit() {
+      localStorage.setItem('token', 'trueToken');
       this.$store.dispatch("login");
       this.$router.push("/");
     }

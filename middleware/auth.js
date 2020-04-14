@@ -1,5 +1,5 @@
-export default function({ store, redirect }) {
-  if (!store.getters.hasToken) {
+export default function({ redirect }) {
+  if (localStorage.getItem("token") === null) {
     redirect("/login?message=login");
   }
 }

@@ -29,7 +29,8 @@ export default {
     openUser(user) {
       this.$router.push("/users/" + user.id);
     }
-  }
+  },
+  middleware: ['auth']
 };
 </script>
 

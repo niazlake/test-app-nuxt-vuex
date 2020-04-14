@@ -16,7 +16,8 @@ export default {
       "https://jsonplaceholder.typicode.com/users/" + params.id
     );
     return {user}
-  }
+  },
+  middleware: ['auth']
 };
 </script>
 
